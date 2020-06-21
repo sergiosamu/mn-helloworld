@@ -1,0 +1,9 @@
+---
+  - hosts: localhost
+    gather_facts: false
+    tasks:
+      - name: Update deploy
+        k8s:
+          state: present
+          definition: "{{ lookup('file', '{{baseDir}}/arq-pdfgen-k8s.yml') | replace ('$VERSION$',hostvars['version']) }}"
+          namespace: default
