@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.sergiosanchez
+---
+testFramework: junit
+sourceLanguage: java
