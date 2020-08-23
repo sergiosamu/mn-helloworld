@@ -33,7 +33,7 @@ pipeline {
       }   
       stage('Push image to AWS') {
          steps {
-            withDockerRegistry(credentialsId: 'ecr:eu-west-1:jenkins_aws', url: 'https://757992231822.dkr.ecr.eu-west-1.amazonaws.com') {
+            withDockerRegistry(credentialsId: 'ecr:eu-west-1:ecr_user', url: 'https://757992231822.dkr.ecr.eu-west-1.amazonaws.com') {
                 sh "docker push 757992231822.dkr.ecr.eu-west-1.amazonaws.com/helloworld:$BRANCH"
             }
          }
