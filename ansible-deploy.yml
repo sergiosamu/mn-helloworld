@@ -5,5 +5,5 @@
       - name: Update deploy
         k8s:
           state: present
-          definition: "{{ lookup('file', '{{baseDir}}/arq-pdfgen-k8s.yml') | replace ('$VERSION$',hostvars['version']) }}"
+          definition: "{{ lookup('file', '{{baseDir}}/helloworld-k8s.yml') | replace ('$VERSION$',hostvars['version']) }}"
           namespace: default
