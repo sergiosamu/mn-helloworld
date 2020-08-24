@@ -17,6 +17,7 @@ pipeline {
    agent any
 
    stages {
+      /*
       stage('Build application') {
          steps {
             withMaven(maven: 'Maven 3.5.0', jdk: 'JDK8') {
@@ -38,14 +39,13 @@ pipeline {
             }
          }
       } 
+      */
       stage('Deploy to k8s') {
          steps {
             ansiblePlaybook(installation: 'Ansible 2.8', 
                             playbook: './ansible-deploy.yml',
-                            extraVars: [
-                                version: "$BRANCH",
-                                baseDir: "$WORKSPACE"
-                            ]);
+                            extraVars: "version=$BRANCH baseDir=$WORKSPACE"
+                            );
          }
       }       
    }
