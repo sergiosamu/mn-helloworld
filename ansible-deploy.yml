@@ -5,5 +5,5 @@
       - name: Update deploy
         k8s:
           state: present
-          definition: "{{ lookup('file', '/var/jenkins_home/workspace/Build_Deploy_HelloWorld/helloworld-k8s.yml') | replace ('$VERSION$',hostvars['version']) }}"
+          definition: "{{ lookup('file', '/var/jenkins_home/workspace/Build_Deploy_HelloWorld/helloworld-k8s.yml') | replace ('$VERSION$','{{version}}') }}"
           namespace: default
