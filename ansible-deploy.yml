@@ -7,5 +7,5 @@
       - name: Update deploy
         k8s:
           state: present
-          definition: "{{ lookup('file', 'helloworld-k8s.yml') | replace ('$VERSION$',version) }}"
+          definition: "{{ lookup('file', 'helloworld-k8s.yml') | replace ('TAG',version) }}"
           namespace: default

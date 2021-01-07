@@ -26,7 +26,7 @@ spec:
         app: "helloworld"
     spec:
       containers:
-      - image: "757992231822.dkr.ecr.eu-west-1.amazonaws.com/helloworld:$VERSION$"
+      - image: "757992231822.dkr.ecr.eu-west-1.amazonaws.com/helloworld:TAG"
         name: "helloworld"
         ports:
         - containerPort: 8080

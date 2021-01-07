@@ -41,7 +41,7 @@ pipeline {
       stage('Deploy to k8s') {
          steps {
             ansiblePlaybook(installation: 'Ansible 2.8', 
-                            playbook: './ansible-deploy.yml',
+                            playbook: 'ansible-deploy.yml',
                             extraVars: [ 
                                version: "$BRANCH" ]
                             );
